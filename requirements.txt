@@ -1,6 +1,6 @@
 torch
 torchvision
 facenet-pytorch
-opencv-python-headless
+opencv-python
 Pillow
 numpy
