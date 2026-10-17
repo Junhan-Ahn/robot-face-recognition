@@ -1,0 +1,18 @@
+# Biometric data: never publish
+data/
+*.pt
+*.pth
+*.onnx
+*.jpg
+*.jpeg
+*.png
+*.webp
+!docs/*.png
+
+# Local environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
