@@ -15,13 +15,13 @@ pip install -r requirements.txt
 Put 8 consented owner photos in `data/owner/` (e.g. `01.jpg` to `08.jpg`). Enroll:
 
 ```bash
-python src/enroll.py --input data/owner --output data/owner_embedding.pt
+python src_pytorch/enroll.py --input data/owner --output data/owner_embedding.pt
 ```
 
 Compare a separate test photo:
 
 ```bash
-python src/recognize.py --image test.jpg --embedding data/owner_embedding.pt
+python src_pytorch/recognize.py --image test.jpg --embedding data/owner_embedding.pt
 ```
 
 A default similarity threshold of 0.70 is **illustrative, not calibrated**. Evaluate with held-out owner/non-owner photos; a wrong match is possible. Do not use this educational demo for real-world security or consequential identity decisions.
@@ -39,13 +39,13 @@ Never upload face photos or biometric embeddings to this public repository. The 
 
 ## Files
 
-- `src/enroll.py` — register owner
-- `src/recognize.py` — test photo
+- `src_pytorch/enroll.py` — register owner
+- `src_pytorch/recognize.py` — test photo
 - `requirements.txt` — dependencies
 
 ## 12-step Google Colab practical (start here)
 
-Open [the 12-step notebook](notebooks/face_recognition_12_steps.ipynb) in Google Colab and run cells in order.
+Open [the 12-step notebook](notebook_pytorch/face_recognition_12_steps.ipynb) in Google Colab and run cells in order.
 
 1. Check Python and PyTorch
 2. Install packages
@@ -60,9 +60,13 @@ Open [the 12-step notebook](notebooks/face_recognition_12_steps.ipynb) in Google
 11. Save the owner embedding
 12. Download and use the Windows webcam demo
 
-**Final source code** lives in `src/enroll.py`, `src/recognize.py`, and `src/webcam.py`.
+**Final source code** lives in `src_pytorch/enroll.py`, `src_pytorch/recognize.py`, and `src_pytorch/webcam.py`.
 For Windows webcam use, install `requirements.txt` and run:
 ```bash
-python src/webcam.py --embedding data/owner_embedding.pt
+python src_pytorch/webcam.py --embedding data/owner_embedding.pt
 ```
 Press Q to exit. The project is educational and has not been validated for real-world identity verification.
+
+## OpenCV LBPH alternative
+
+The actual classroom LBPH exercise is in [notebooks_opencv/face_recognition_steps.ipynb](notebooks_opencv/face_recognition_steps.ipynb) and [src_opencv/](src_opencv/). The PyTorch/FaceNet example is in [notebook_pytorch/](notebook_pytorch/) and [src_pytorch/](src_pytorch/).
